@@ -34,6 +34,6 @@ SET(dist_admlocalm4_DATA
 )
             
 FOREACH(f ${dist_admlocalm4_DATA})
-  SET(DEST adm_local/unix/config_files)
+  SET(DEST ${SALOME_INSTALL_AMCONFIG}/config_files)
   INSTALL(FILES ${f} DESTINATION ${DEST})
 ENDFOREACH(f ${dist_admlocalm4_DATA})
