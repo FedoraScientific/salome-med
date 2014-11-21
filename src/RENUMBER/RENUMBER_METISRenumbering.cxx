@@ -40,6 +40,6 @@ void METISRenumbering::renumber(const int *graph, const int *index_graph, int nb
   out0->fillWithZero(); out1->fillWithZero();
   int num_flag=1;
   int options=0;
-  METIS_NodeND(&nbCell,(int*)index_graph,(int*)graph,&num_flag,&options,out0->getPointer(),out1->getPointer());
+  METIS_NodeND((idx_t*)&nbCell,(idx_t*)index_graph,(idx_t*)graph,(idx_t*)&num_flag,(idx_t*)&options,(idx_t*)out0->getPointer(),(idx_t*)out1->getPointer());
   iperm=out0.retn(); perm=out1.retn();
 }
